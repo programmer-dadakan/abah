@@ -1,9 +1,6 @@
 const pages = [
     "index.html",
-    "b1.html",
-    "b2.html",
-    "b3.html",
-    "b4.html"
+    "b1.html"
 ];
 
 // Fungsi untuk memilih halaman acak

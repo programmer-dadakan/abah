@@ -1,62 +1,167 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset dasar */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
     background-color: #f4f4f4;
-}
-
-header {
-    background-color: #2e59d9;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-h1 {
-    margin: 0;
-}
-
-ul {
-    background-color: rgba(57, 105, 210, 0.415);padding: 5px;
-}
-a {
-    text-decoration: none;color: brown; font-weight: bold;
-}
-
-section {
-    padding: 20px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-#countdown {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.content p {
-    font-size: 16px;
+    color: #333;
     line-height: 1.6;
 }
 
-.highlight {
-    color: #2564a4;
-    font-weight: bold;
+/* Header */
+header {
+    background: linear-gradient(135deg, #2e63e9, #0748ee);
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigasi */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?nature,technology') no-repeat center center/cover;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #0748ee;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff5775;
+}
+
+/* Section Umum */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background: #f8f8f8;
+}
+
+/* Grid Responsive */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
